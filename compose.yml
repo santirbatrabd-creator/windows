@@ -3,7 +3,10 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "11"
+      VERSION: "10e"
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
+      DISK_SIZE: "256G"
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -16,4 +19,4 @@ services:
     volumes:
       - ./windows:/storage
     restart: always
-    stop_grace_period: 2m
+    stop_grace_period: 720m
